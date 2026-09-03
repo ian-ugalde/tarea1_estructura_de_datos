@@ -5,15 +5,11 @@
 
 // coloca un nodo ya creado en su lugar correcto
 static void insertarOrdenado(Reserva **lista, Reserva *nuevo) {
-    // Caso 1: lista vacía o el nuevo va primero (más prioridad, o misma
-    // prioridad pero llegó antes que la cabeza actual)
     if (*lista == NULL || nuevo->prioridad > (*lista)->prioridad) {
         nuevo->siguiente = *lista;
         *lista = nuevo;
         return;
-    }
-
-    // Caso 2: buscamos el lugar correcto recorriendo la lista
+    } buscamos el lugar correcto recorriendo la lista
     Reserva *actual = *lista;
     while (actual->siguiente != NULL &&
            actual->siguiente->prioridad >= nuevo->prioridad) {
@@ -24,7 +20,7 @@ static void insertarOrdenado(Reserva **lista, Reserva *nuevo) {
     actual->siguiente = nuevo;
 }
 
-//registra gente en la lista de espera, donde la prioridad es estandar
+//prioridad es estandar
 void registrarGrupo(Reserva **lista, char *id, int personas) {
     Reserva *nuevo = (Reserva *) malloc(sizeof(Reserva));
     if (nuevo == NULL) {
@@ -32,8 +28,6 @@ void registrarGrupo(Reserva **lista, char *id, int personas) {
         return;
     }
 
-
-    //se copia el id evitando desbordar el arreglo
     strncpy(nuevo->id, id, sizeof(nuevo->id) - 1);
     nuevo->id[sizeof(nuevo->id) - 1] = '\0';
     nuevo->personas = personas;
@@ -48,7 +42,7 @@ void registrarGrupo(Reserva **lista, char *id, int personas) {
 }
 
 
-//cambia la prioridad de un grupo que ya existe
+//cambia la prioridad de un grupo
 void asignarPrioridad(Reserva **lista, char *id, Prioridad nuevaPrioridad) {
     Reserva *actual = *lista;
     Reserva *anterior = NULL;
@@ -63,15 +57,11 @@ void asignarPrioridad(Reserva **lista, char *id, Prioridad nuevaPrioridad) {
         printf("Aviso: no se encontro ningun grupo con id '%s'.\n", id);
         return;
     }
-
-    //lo sacamos de su posicion actual
     if (anterior == NULL) {
         *lista = actual->siguiente;
     } else {
         anterior->siguiente = actual->siguiente;
     }
-
-    //actualizamos la prioridad y lo reinsertamos en su nuevo lugar
     actual->prioridad = nuevaPrioridad;
     actual->siguiente = NULL;
     insertarOrdenado(lista, actual);
@@ -80,7 +70,6 @@ void asignarPrioridad(Reserva **lista, char *id, Prioridad nuevaPrioridad) {
 }
 
 
-// muestra todas las reservas actualmente en la lista de espera
 void mostrarListaEspera(Reserva *lista) {
     if (lista == NULL) {
         printf("No hay grupos en la lista de espera.\n");
@@ -117,7 +106,6 @@ void mostrarListaEspera(Reserva *lista) {
 }
 
 
-//asigna mesa al grupo con mayor prioridad
 void asignarMesa(Reserva **lista) {
     if (*lista == NULL) {
         printf("Aviso: no hay grupos pendientes por asignar mesa.\n");
@@ -143,15 +131,12 @@ void asignarMesa(Reserva **lista) {
     printf("Prioridad: %s\n", nombrePrioridad);
     printf("Hora de registro: %s", ctime(&siguienteGrupo->hora_registro));
 
-    // Actualizamos la cabeza de la lista para que apunte al segundo nodo
     *lista = siguienteGrupo->siguiente;
-
-    // Liberamos la memoria del nodo que ya sacamos
     free(siguienteGrupo);
 }
 
 
-// Busca una reserva por id y muestra sus datos si existe
+//busca una reserva por id y muestra sus datos si existe
 void buscarReserva(Reserva *lista, char *id) {
     Reserva *actual = lista;
 
@@ -185,7 +170,7 @@ void buscarReserva(Reserva *lista, char *id) {
 }
 
 
-// Libera toda la memoria de los nodos que queden en la lista
+// Libera toda la memoria
 void liberarLista(Reserva **lista) {
     Reserva *actual = *lista;
     Reserva *siguiente;

@@ -8,7 +8,7 @@ typedef enum {
     GRUPO_GRANDE = 1,
     VIP = 2
 } Prioridad;
-
+//TDA lista enlazada simple (reserva)
 typedef struct Reserva {
     char id[50];
     int personas;
