@@ -84,9 +84,11 @@ El sistema actualiza la prioridad de "Familia Gonzalez" a "VIP", ubicándolo al 
 3) Mostrar lista de espera
 
 ----- Lista de espera -----
-1. Familia Gonzalez | Personas: 4 | Prioridad: VIP | Hora: 00:00
+1. Familia Gonzalez | Personas: 4 | Prioridad: VIP | Hora: mon sep 09 00:00
 ```
-La lista muestra a "Familia Gonzalez" en primer lugar, dado su nivel de prioridad VIP.
+La lista muestra a "Familia Gonzalez" en primer lugar, dado su nivel de prioridad VIP. 
+
+("mon sep 09" se refiere a: monday september 09, en la derecha está la hora "00:00")
 
 
 **Paso 4: Buscar una reserva existente**
@@ -100,7 +102,7 @@ Ingrese ID/Nombre: Familia Gonzalez
 ID/Nombre: Familia Gonzalez 
 Personas: 4 
 Prioridad: VIP 
-Hora de registro: "lunes" "septiembre" "09" 00:00 
+Hora de registro: mon sep 09 00:00 
 ``` 
 El sistema muestra los datos completos de "Familia Gonzalez": cantidad de personas, prioridad y hora de registro.
 
@@ -112,7 +114,7 @@ El sistema muestra los datos completos de "Familia Gonzalez": cantidad de person
 ID/Nombre: Familia Gonzalez
 Personas: 4
 Prioridad: VIP
-Hora de registro: 00:00
+Hora de registro: mon sep 09 00:00
 ```
 El sistema asigna mesa a "Familia Gonzalez" (por ser el de mayor prioridad), muestra sus datos y lo elimina de la lista de espera.
 
