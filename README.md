@@ -24,18 +24,16 @@ Este sistema fue desarrollado en lenguaje C y puede ejecutarse en Replit o en cu
 2. Presiona el botón "Run" ubicado en la parte superior.
 3. Replit compilará automáticamente los archivos `main.c`, `reserva.c` y `reserva.h`, y ejecutará el programa en la consola.
 
-**En un equipo local (opcional):**
+**Si no llega a funcionar**
 
-1. Descarga y descomprime el archivo `.zip` en una carpeta de tu elección.
-2. Abre una terminal en esa carpeta.
-3. Compila el programa con el siguiente comando:
+Compila el programa con el siguiente comando en la shell:
 
-gcc main.c reserva.c -o listaespera
+`gcc main.c reserva.c list.c -o listaespera`
 
 
-4. Ejecuta el programa con:
+Ejecuta el programa con:
 
-./listaespera
+`./listaespera`
 
 
 ## Funcionalidades
@@ -51,12 +49,14 @@ gcc main.c reserva.c -o listaespera
 
 **Problemas conocidos:**
 
-- Al reasignar la prioridad de un grupo, este pasa a ubicarse al final del bloque correspondiente a su nueva prioridad, sin respetar estrictamente su hora de registro original respecto a los demás grupos que ya se encontraban en ese nivel, esto puede modificar el orden de llegada dentro de una misma categoría cuando se producen cambios de prioridad
+- Al reasignar la prioridad de un grupo, este pasa a ubicarse al final del bloque a su nueva prioridad, sin respetar estrictamente su hora de registro original respecto a los demás grupos que ya se encontraban en ese nivel, esto puede modificar el orden de llegada dentro de una misma categoría cuando se producen cambios de prioridad
+- No se toma en cuenta cuando alguien utiliza un tipo de dato no esperado, es decir si se utiliza un string cuando se pide la cantidad el programa no lo acepta y resulta en error.
 
 **A mejorar:**
 
 - Actualmente el ID/Nombre no valida que no se repita entre distintos grupos.
 - Se podría agregar una opción para editar la cantidad de personas de un grupo ya registrado.
+- Se puede comprobar que los datos ingresados por el usuario sean del tipo esperado (string, int, etc...)
 
 ## Ejemplo de uso
 
