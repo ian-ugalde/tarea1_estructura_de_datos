@@ -21,17 +21,11 @@ Este sistema fue desarrollado en lenguaje C y puede ejecutarse en Replit o en cu
 **En Replit:**
 
 1. Abre el proyecto en Replit.
-2. Presiona el botón "Run" ubicado en la parte superior.
-3. Replit compilará automáticamente los archivos `main.c`, `reserva.c` y `reserva.h`, y ejecutará el programa en la consola.
-
-**Si no llega a funcionar**
-
-Compila el programa con el siguiente comando en la shell:
+2. Compila el programa con el siguiente comando en la shell:
 
 `gcc main.c reserva.c list.c -o listaespera`
 
-
-Ejecuta el programa con:
+3. Ejecuta el programa con:
 
 `./listaespera`
 
@@ -75,9 +69,9 @@ El sistema registra a "Familia Gonzalez" con prioridad inicial "Estándar" y gua
 
 El grupo indica que tiene una reserva VIP, por lo que se actualiza su prioridad.
 ```
-`2) Asignar prioridad a cliente`
-`Ingrese ID/Nombre: Familia Gonzalez`
+2) Asignar prioridad a cliente
 
+Ingrese ID/Nombre: Familia Gonzalez
 VIP
 Grupo Grande
 Estandar
@@ -106,7 +100,7 @@ Ingrese ID/Nombre: Familia Gonzalez
 ID/Nombre: Familia Gonzalez 
 Personas: 4 
 Prioridad: VIP 
-Hora de registro: 00:00 
+Hora de registro: "lunes" "septiembre" "09" 00:00 
 ``` 
 El sistema muestra los datos completos de "Familia Gonzalez": cantidad de personas, prioridad y hora de registro.
 
